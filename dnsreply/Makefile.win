@@ -1,0 +1,30 @@
+# Project: dnsrelay
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = mydnsrelay.o $(RES)
+LINKOBJ  = mydnsrelay.o $(RES)
+LIBS =  -L"F:/Dev-Cpp/lib" -lodbc32 libws2_32.a  -g3 
+INCS =  -I"F:/Dev-Cpp/include" 
+CXXINCS =  -I"F:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"F:/Dev-Cpp/include/c++/3.4.2/backward"  -I"F:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"F:/Dev-Cpp/include/c++/3.4.2"  -I"F:/Dev-Cpp/include" 
+BIN  = dnsrelay.exe
+CXXFLAGS = $(CXXINCS)   -g3
+CFLAGS = $(INCS)   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before dnsrelay.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "dnsrelay.exe" $(LIBS)
+
+mydnsrelay.o: mydnsrelay.cpp
+	$(CPP) -c mydnsrelay.cpp -o mydnsrelay.o $(CXXFLAGS)
