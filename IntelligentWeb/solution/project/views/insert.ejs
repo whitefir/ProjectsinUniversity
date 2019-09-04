@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+        <a href="index" class="w3-bar-item w3-button">Homepage</a>
+        <a href="login" class="w3-right w3-bar-item w3-button">Login</a>
+        <a href="register" class="w3-right w3-bar-item w3-button">Register</a>
+    </div>
+</div>
+
+<form action="insert" method="POST">
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+        <h1>Restaurant Name:<input type="text" required name="name" ></h1>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+    <div id="description" style="border-top:1px grey solid; border-bottom:1px grey solid;height:100px">
+        description:<input type="text" required name="description" style="height:100px">
+    </div>
+    <div class="w3-row w3-padding-64">
+
+        <div class="w3-col m6 w3-padding-large">
+            <h5>cuisine:<input type="text" required name="cuisine"></h5>
+            <p class="w3-large">address:<input type="text" required name="address"></p>
+            <p class="w3-large">postcode:<input type="text" required name="postcode"></p>
+        </div>
+    </div>
+    <div>
+        <h5>longitude:<input type="text" required name="pos_longitude"></h5>
+        <h5>latitude:<input type="text" required name="pos_latitude"></h5>
+    </div>
+</div>
+</div>
+    <input type="submit" value="submit" onclick="javascript:window.location='list';">
+</form>
+
+</body>
+</html>

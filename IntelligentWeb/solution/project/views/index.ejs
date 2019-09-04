@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>RestaurantsFinder</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+</head>
+
+<div id="object" visibility: hidden><%=JSON.stringify(obj)%></div>
+
+<body>
+
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+        <a href="index" class="w3-bar-item w3-button">Homepage</a>
+        <a href="login" class="w3-right w3-bar-item w3-button">Login</a>
+        <a href="register" class="w3-right w3-bar-item w3-button">Register</a>
+    </div>
+</div>
+
+
+<div style="background-color:#009688;height:200px">
+  <form onsubmit="onSubmit()" align="center" style="width:100%;align:center">
+    <b>Restaurant:</b><input type="text" required name="name" style="height:50px; width:150px; margin-top: 7%">
+    <b>Cuisine:</b><input type="text" name="cuisine" style="height:50px; width:150px; margin-top: 7%">
+    <b>Postcode:</b><input type="text" name="postcode" style="height:50px; width:150px; margin-top: 7%">
+    <input type="submit" value="search" style="background-color:#40E0D0; height:50px; width:80px">
+    <input type="button" value="view all" onclick="javascript:window.location='list';" style="background-color:#40E0D0; height:50px; width:80px">
+  </form>
+</div>
+
+
+<!-- Add Google Maps -->
+<div id="googleMap" style="height:400px"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5whzRGwY0N31bWd1KnYhjqJXbuWlvXvA&callback=myMap"></script>
+
+<div id="search result" style="border-top:1px grey solid; border-bottom:1px grey solid;height:200px">
+
+	    <div id="result_name" style="height:20%" ></div>
+        <div id="result_cuisine" style="height:15%"></div>
+        <div id="result_postcode" style="height:15%"></div>
+        <div id="result_address" style="height:20%"></div>
+        <div id="result_description" style="height:30%"></div>
+</div>
+</body>
+</html>
